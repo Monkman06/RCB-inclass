@@ -1,6 +1,5 @@
 // Bubble Sort: Solution
 // =====================
-
 // Grab the result and start divs.
 var resultDiv = document.getElementById('result');
 var startDiv = document.getElementById('start');
