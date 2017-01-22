@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>
+  
+  </title>
+</head>
+<body>
+
+<p>W, A, S, D keys to move</p>
+
+<section style="border-style: solid; border-width: 2px; width: 500px;">
+
+  <canvas width="500" height="400" id="canvas" tabindex="0">
+    Canvas tag not supported
+  </canvas>
+
+</section>
+
+<script type="text/javascript">
+  //coordinates of rectangle starting position away from origin
+  var x = 100;
+  var y = 100;
+  var canvas = document.querySelector("#canvas");
+  canvas.addEventListener('keydown', doKeyDown, true);
+  ctx = canvas.getContext("2d");
+  ctx.fillRect(100, 100, 50, 30);
+  function drawBlock(){
+    ctx.beginPath();
+    ctx.rect(0, 0, 50, 50);
+    ctx.fillStyle="#0095DD";
+    ctx.fill();
+    ctx.closePath();
+  }
+  drawBlock();
+  function clearCanvas() {
+    canvas.width = canvas.width;
+  }
+  
+  function doKeyDown(e){
+    //====================
+    //  THE W KEY
+    //====================
+    if (e.keyCode == 87) {
+      clearCanvas();
+      y = y - 10;
+      
+      ctx.fillRect(x, y, 50, 30);
+      drawBlock();
+    }
+    //====================
+    //  THE S KEY
+    //====================
+    if (e.keyCode == 83) {
+      clearCanvas();
+      y = y + 10;
+      
+      ctx.fillRect(x, y, 50, 30);
+      drawBlock();
+    }
+    //====================
+    //  THE A KEY
+    //====================
+    if (e.keyCode == 65) {
+      clearCanvas();
+      x = x - 10;
+      
+      ctx.fillRect(x, y, 50, 30);
+      drawBlock();
+    }
+    //====================
+    //  THE D KEY
+    //====================
+    if (e.keyCode == 68) {
+      clearCanvas();
+      x = x + 10;
+      ctx.fillRect(x, y, 50, 30);
+      drawBlock();
+    }
+  }
+</script>
+</body>
+</html>
